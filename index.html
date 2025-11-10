@@ -1,0 +1,793 @@
+
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Image Caption Generator | Free Online Tool for Alt Text & Social Media</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Generate instant, high-quality image captions and alt text for free with our AI-powered tool. Perfect for social media, SEO, and accessibility. Supports various tones and languages using advanced Vision Models like Ollama/Workers AI.">
+    <meta name="keywords" content="image caption generator, ai caption generator, alt text generator, vision model, ollama, workers ai, free ai tool, social media captions, seo, accessibility">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://doodax.com/">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://doodax.com/">
+    <meta property="og:title" content="AI Image Caption Generator | Free Online Tool">
+    <meta property="og:description" content="Generate instant, high-quality image captions and alt text for free with our AI-powered tool. Supports various tones and languages.">
+    <meta property="og:image" content="https://picsum.photos/seed/ai-caption/1200/630">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://doodax.com/">
+    <meta property="twitter:title" content="AI Image Caption Generator | Free Online Tool">
+    <meta property="twitter:description" content="Generate instant, high-quality image captions and alt text for free with our AI-powered tool. Supports various tones and languages.">
+    <meta property="twitter:image" content="https://picsum.photos/seed/ai-caption-twitter/1200/630">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        'cosmic-blue': '#0a192f',
+                        'cosmic-purple': '#1e1b4b',
+                        'cosmic-pink': '#4c1d95',
+                        'gold': '#FFD700',
+                    },
+                    animation: {
+                        'nebula': 'nebula 30s ease infinite',
+                    },
+                    keyframes: {
+                        nebula: {
+                            '0%, 100%': { backgroundPosition: '0% 50%' },
+                            '50%': { backgroundPosition: '100% 50%' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        body {
+            background-color: #0a192f;
+            color: #e2e8f0;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        .cosmic-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: linear-gradient(270deg, #0a192f, #1e1b4b, #4c1d95, #0a192f);
+            background-size: 600% 600%;
+            animation: nebula 30s ease infinite;
+        }
+
+        .modal-overlay {
+            background-color: rgba(10, 25, 47, 0.8);
+            backdrop-filter: blur(4px);
+        }
+        
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0a192f;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #4c1d95;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #6d28d9;
+        }
+        
+        .faq-item summary {
+            cursor: pointer;
+            outline: none;
+        }
+
+        .faq-item summary::-webkit-details-marker {
+            display: none;
+        }
+        
+        .faq-item[open] summary ~ * {
+            animation: sweep .5s ease-in-out;
+        }
+
+        @keyframes sweep {
+            0% {opacity: 0; transform: translateY(-10px)}
+            100% {opacity: 1; transform: translateY(0)}
+        }
+    </style>
+
+    <!-- JSON-LD Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebSite",
+          "url": "https://doodax.com/",
+          "name": "AI Image Caption Generator",
+          "description": "A free online tool to generate captions and alt text for images using advanced AI vision models.",
+          "publisher": {
+            "@type": "Person",
+            "name": "HSINI MOHAMED"
+          }
+        },
+        {
+          "@type": "WebApplication",
+          "name": "AI Image Caption Generator",
+          "url": "https://doodax.com/",
+          "applicationCategory": "MultimediaApplication",
+          "operatingSystem": "All",
+          "offers": {
+            "@type": "Offer",
+            "price": "0"
+          },
+          "description": "Generate instant, high-quality image captions and alt text for free. The application accepts an image upload and uses a simulated AI Vision Model to generate contextually relevant captions based on user-selected tone, language, and additional information."
+        },
+        {
+          "@type": "Article",
+          "headline": "The Ultimate Guide to AI Image Caption Generation: From SEO to Accessibility",
+          "author": {
+            "@type": "Person",
+            "name": "HSINI MOHAMED",
+            "url": "https://github.com/hsinidev"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "doodax.com",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://doodax.com/favicon.svg"
+            }
+          },
+          "datePublished": "2023-10-27",
+          "dateModified": "2023-10-27",
+          "mainEntityOfPage": "https://doodax.com/",
+          "image": "https://picsum.photos/seed/ai-caption-article/1200/800",
+          "articleBody": "This comprehensive guide explores the world of AI image caption generation, covering everything from the underlying technology of Vision Models to practical applications in SEO, social media, and web accessibility. Learn why alt text is crucial, how AI compares to manual captioning, and how to leverage this technology to enhance your digital content strategy..."
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "What is an AI image caption generator?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "An AI image caption generator is a tool that uses artificial intelligence, specifically computer vision and natural language processing models, to automatically create descriptive text (captions) for an image. It analyzes the visual content of the image and generates relevant, human-like descriptions."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Why is alt text important for images?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Alt text (alternative text) is crucial for two main reasons: accessibility and SEO. For accessibility, it provides a textual description of an image for screen readers used by visually impaired users. For SEO, it helps search engines understand the content of an image, improving its chances of ranking in image search results."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How does this tool work?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "You upload an image, and the tool converts it into a format that a Vision Language Model (like those from Ollama or other AI services) can understand. The model analyzes the image's objects, actions, and context. Based on your selected tone and language, it then generates several caption options for you to choose from."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Is my uploaded image stored on your servers?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "No, we prioritize your privacy. The image is processed in your browser, converted to a Base64 string, and sent directly to the simulated AI model endpoint for captioning. We do not store your images on our servers."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Can I use the generated captions for commercial purposes?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, the captions generated by this tool are free to use for both personal and commercial purposes, such as on your blog, e-commerce site, or social media marketing campaigns. However, always ensure the final caption accurately reflects your content and brand voice."
+              }
+            }
+          ]
+        }
+      ]
+    }
+    </script>
+</head>
+<body class="min-h-screen font-sans antialiased">
+    <div class="cosmic-background"></div>
+
+    <div class="relative min-h-screen flex flex-col items-center justify-center p-4">
+        <header class="absolute top-0 left-0 right-0 p-4 z-30">
+            <div class="relative">
+                <button id="menu-btn" class="p-2 rounded-md hover:bg-slate-700/50 transition-colors" aria-label="Open menu" aria-haspopup="true" aria-expanded="false">
+                    <svg id="menu-open-icon" class="w-6 h-6 text-slate-300" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                    </svg>
+                    <svg id="menu-close-icon" class="w-6 h-6 text-slate-300 hidden" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+                <div id="popup-menu" class="hidden absolute top-full left-0 mt-2 w-48 bg-slate-800/80 backdrop-blur-md border border-slate-700 rounded-lg shadow-lg" role="menu" aria-orientation="vertical" aria-labelledby="menu-btn">
+                    <nav class="flex flex-col p-2">
+                        <a href="#" class="block px-3 py-2 rounded-md text-sm text-slate-300 hover:bg-slate-700 hover:text-gold transition-colors" data-modal="about-modal" role="menuitem">About</a>
+                        <a href="#" class="block px-3 py-2 rounded-md text-sm text-slate-300 hover:bg-slate-700 hover:text-gold transition-colors" data-modal="contact-modal" role="menuitem">Contact</a>
+                        <a href="#" class="block px-3 py-2 rounded-md text-sm text-slate-300 hover:bg-slate-700 hover:text-gold transition-colors" data-modal="guide-modal" role="menuitem">Guide</a>
+                        <a href="#" class="block px-3 py-2 rounded-md text-sm text-slate-300 hover:bg-slate-700 hover:text-gold transition-colors" data-modal="privacy-modal" role="menuitem">Privacy</a>
+                        <a href="#" class="block px-3 py-2 rounded-md text-sm text-slate-300 hover:bg-slate-700 hover:text-gold transition-colors" data-modal="tos-modal" role="menuitem">ToS</a>
+                        <a href="#" class="block px-3 py-2 rounded-md text-sm text-slate-300 hover:bg-slate-700 hover:text-gold transition-colors" data-modal="dmca-modal" role="menuitem">DMCA</a>
+                    </nav>
+                </div>
+            </div>
+        </header>
+
+        <main class="w-full max-w-2xl mx-auto z-10 flex flex-col items-center">
+            <div class="text-center mb-8">
+                <h1 class="text-4xl md:text-5xl font-bold text-white mb-2">AI Image Caption Generator</h1>
+                <p class="text-slate-300 text-lg">Generate descriptive alt text & creative captions in seconds.</p>
+            </div>
+
+            <div class="w-full bg-slate-800/50 backdrop-blur-md border border-slate-700 rounded-xl p-6 shadow-2xl">
+                <!-- Image Upload Area -->
+                <div id="upload-area" class="mb-4">
+                    <label for="image-upload" class="block text-sm font-medium text-slate-300 mb-2">Upload Image</label>
+                    <div id="drop-zone" class="relative block w-full h-48 border-2 border-dashed border-slate-600 rounded-lg p-4 text-center cursor-pointer hover:border-slate-500 transition-colors">
+                        <input type="file" id="image-upload" accept="image/*" class="sr-only">
+                        <div id="upload-prompt" class="flex flex-col items-center justify-center h-full">
+                            <svg class="w-10 h-10 text-slate-500 mb-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 16.5V9.75m0 0l-3.75 3.75M12 9.75l3.75 3.75M17.25 8.25L21 12m-18 0l3.75-3.75" />
+                            </svg>
+                            <p class="text-sm text-slate-400"><span class="font-semibold text-slate-300">Click to upload</span> or drag and drop</p>
+                            <p class="text-xs text-slate-500">PNG, JPG, WEBP, or GIF</p>
+                        </div>
+                        <img id="image-preview" src="" alt="Image preview" class="hidden absolute inset-0 w-full h-full object-contain p-2 rounded-lg">
+                    </div>
+                </div>
+
+                <!-- API Endpoint -->
+                <div class="mb-4">
+                    <label for="api-endpoint" class="block text-sm font-medium text-slate-300 mb-2">Vision Model API Endpoint/Key</label>
+                    <input type="text" id="api-endpoint" name="api-endpoint" value="Ollama Vision Model URL (Simulated)" class="w-full bg-slate-900/50 border border-slate-700 rounded-md shadow-sm py-2 px-3 text-white focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-all text-sm" placeholder="Enter your model endpoint">
+                </div>
+
+                <!-- Control Panel -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                    <div>
+                        <label for="tone" class="block text-sm font-medium text-slate-300 mb-2">Select Tone</label>
+                        <select id="tone" name="tone" class="w-full bg-slate-900/50 border border-slate-700 rounded-md shadow-sm py-2 px-3 text-white focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-all text-sm">
+                            <option value="fun">Fun 🎉</option>
+                            <option value="accurate">Accurate (Alt Text)</option>
+                            <option value="serious">Serious 🧐</option>
+                            <option value="joke">Joke 😂</option>
+                            <option value="inspirational">Inspirational 💡</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="language" class="block text-sm font-medium text-slate-300 mb-2">Select Language</label>
+                        <select id="language" name="language" class="w-full bg-slate-900/50 border border-slate-700 rounded-md shadow-sm py-2 px-3 text-white focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-all text-sm">
+                            <option value="English">English</option>
+                            <option value="Spanish">Spanish</option>
+                            <option value="French">French</option>
+                            <option value="German">German</option>
+                            <option value="Japanese">Japanese</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Additional Info -->
+                <div class="mb-6">
+                    <label for="additional-info" class="block text-sm font-medium text-slate-300 mb-2">Additional Info (Prompt Context)</label>
+                    <textarea id="additional-info" name="additional-info" rows="3" class="w-full bg-slate-900/50 border border-slate-700 rounded-md shadow-sm py-2 px-3 text-white focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-all text-sm" placeholder="e.g., This is a picture of my dog wearing a hat"></textarea>
+                </div>
+
+                <!-- Generate Button -->
+                <button id="generate-btn" class="w-full bg-indigo-600 text-white font-semibold py-3 px-4 rounded-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-cosmic-blue focus:ring-indigo-500 transition-transform transform hover:scale-105 disabled:bg-slate-600 disabled:cursor-not-allowed">
+                    Generate Captions
+                </button>
+            </div>
+
+            <!-- Output Area -->
+            <div id="output-area" class="w-full mt-6 hidden">
+                <h2 class="text-xl font-semibold text-white mb-4">Generated Captions</h2>
+                <div id="captions-container" class="space-y-3">
+                    <!-- Captions will be injected here -->
+                </div>
+            </div>
+            
+            <div id="error-message" class="w-full mt-6 hidden text-center bg-red-900/50 border border-red-700 p-3 rounded-md text-red-300"></div>
+
+            <!-- Read More Button -->
+            <div class="w-full mt-12 text-center">
+                <button id="read-more-btn" class="text-indigo-400 hover:text-indigo-300 transition-colors">
+                    Learn More About AI Image Captioning &darr;
+                </button>
+            </div>
+        </main>
+        
+        <!-- Collapsed SEO Article -->
+        <section id="seo-article" class="w-full max-w-4xl mx-auto z-10 hidden mt-8 bg-slate-900/70 backdrop-blur-lg border border-slate-700 rounded-xl p-8 md:p-12 shadow-2xl prose prose-invert prose-lg">
+            <h2 class="text-3xl font-bold">The Ultimate Guide to AI Image Caption Generation: From SEO to Accessibility</h2>
+            
+            <p>In an increasingly visual digital world, images are more than just decoration; they are powerful communication tools. However, without context, their impact can be lost. This is where image captions come in, and with the advent of artificial intelligence, generating these captions has become faster, smarter, and more accessible than ever before. This comprehensive guide will explore the fascinating world of AI image caption generation, from the underlying technology to its profound impact on SEO, social media, e-commerce, and web accessibility.</p>
+
+            <nav class="mt-8 mb-8 p-4 bg-slate-800 rounded-lg">
+                <h3 class="text-xl font-semibold mb-2">Table of Contents</h3>
+                <ul class="list-disc list-inside space-y-1">
+                    <li><a href="#what-is-ai" class="hover:text-gold">What is AI Image Caption Generation?</a></li>
+                    <li><a href="#how-it-works" class="hover:text-gold">How Do Vision Models Work?</a></li>
+                    <li><a href="#alt-text" class="hover:text-gold">The Critical Role of Alt Text: SEO and Accessibility</a></li>
+                    <li><a href="#use-cases" class="hover:text-gold">Powerful Use Cases Across Industries</a></li>
+                    <li><a href="#ai-vs-manual" class="hover:text-gold">AI vs. Manual Captioning: A Comparative Analysis</a></li>
+                    <li><a href="#choosing-tone" class="hover:text-gold">The Art of Choosing the Right Tone and Language</a></li>
+                    <li><a href="#future-of-captioning" class="hover:text-gold">The Future of AI-Powered Visual Storytelling</a></li>
+                    <li><a href="#faq" class="hover:text-gold">Frequently Asked Questions</a></li>
+                </ul>
+            </nav>
+
+            <article>
+                <h3 id="what-is-ai">What is AI Image Caption Generation?</h3>
+                <p>At its core, AI image caption generation is the process of using artificial intelligence to automatically create a textual description of an image. This isn't just about identifying objects; it's about understanding the relationships between them, the actions taking place, and the overall context and sentiment of the scene. The technology bridges the gap between computer vision (seeing and interpreting images) and natural language processing (generating human-like text).</p>
+                <p>A sophisticated AI model can look at a photo of a golden retriever catching a frisbee in a park on a sunny day and generate a caption like, "A joyful golden retriever leaps to catch a red frisbee in a sunlit park," rather than just listing "dog, frisbee, park, sun." This ability to create narrative and contextually rich descriptions is what makes the technology so transformative.</p>
+
+                <h3 id="how-it-works">How Do Vision Models Work? The Magic Behind the Curtain</h3>
+                <p>The technology powering tools like this one is a type of AI known as a Vision Language Model (VLM). These models, often built on advanced architectures like transformers (the same technology behind models like GPT), are trained on massive datasets containing billions of images paired with their corresponding textual descriptions. This training process allows the model to learn intricate patterns and connections between visual elements and language.</p>
+                <p>The process can be broken down into two main stages:</p>
+                <ol>
+                    <li><strong>Image Encoding:</strong> First, the image is passed through a "vision encoder," typically a Convolutional Neural Network (CNN) or a Vision Transformer (ViT). This part of the model processes the pixels and extracts a set of high-level features—a numerical representation that captures the essence of the image's content, including objects, textures, and spatial arrangements.</li>
+                    <li><strong>Text Decoding:</strong> This numerical representation is then fed into a "language decoder," which is a language model. The decoder takes the image features as context and begins to generate a sequence of words, one by one, to form a coherent sentence. It predicts the most likely next word based on the image features and the words it has already generated, effectively "translating" the visual information into natural language.</li>
+                </p>
+                <p>Services like Ollama and Workers AI are making these powerful models more accessible, allowing developers to integrate sophisticated vision capabilities into their applications without needing to train these massive models from scratch.</p>
+
+                <h3 id="alt-text">The Critical Role of Alt Text: SEO and Accessibility</h3>
+                <p>One of the most vital applications of AI-generated captions is for creating "alt text." Alt text (or alternative text) is an HTML attribute added to an image tag that provides a textual description of the image. Its importance cannot be overstated for two primary reasons:</p>
+                <ul>
+                    <li><strong>Accessibility:</strong> For users who are visually impaired and rely on screen readers, alt text is their window to the visual content on a webpage. The screen reader vocalizes the alt text, describing the image so the user can understand its purpose and content. Without descriptive alt text, a significant portion of the web remains inaccessible.</li>
+                    <li><strong>Search Engine Optimization (SEO):</strong> Search engine crawlers, like Googlebot, cannot "see" images in the way humans do. They rely heavily on textual information to understand and index visual content. Well-written alt text, rich with relevant keywords, tells search engines exactly what an image is about. This dramatically improves the chances of your images ranking in Google Images search, driving a significant source of organic traffic to your website. It also helps search engines understand the context of the surrounding content on the page, boosting its overall relevance and ranking.</li>
+                </ul>
+
+                <h3 id="use-cases">Powerful Use Cases Across Industries</h3>
+                <p>AI image captioning is not just a novelty; it's a practical tool with wide-ranging applications:</p>
+                <ul>
+                    <li><strong>Social Media Management:</strong> Content creators and marketers can save hours by automatically generating engaging and creative captions for platforms like Instagram, Facebook, and Pinterest. Different tones can be used to match the platform's vibe, from fun and quirky to professional and inspirational.</li>
+                    <li><strong>E-commerce:</strong> Online stores can automatically generate descriptive captions and alt text for thousands of product images, improving SEO and making their products more discoverable. This also enhances the shopping experience for all users.</li>
+                    <li><strong>Blogging and Content Creation:</strong> Writers and bloggers can ensure all their images are accessible and SEO-friendly by quickly generating accurate alt text. This frees them up to focus on writing great content.</li>
+                    <li><strong>Digital Archiving:</strong> Libraries, museums, and organizations with vast image archives can use AI to automatically catalog and tag their collections, making them searchable and accessible to the public.</li>
+                    <li><strong>Education:</strong> Educators can create more inclusive learning materials by ensuring all visual aids have descriptive captions for students with visual impairments.</li>
+                </ul>
+
+                <h3 id="ai-vs-manual">AI vs. Manual Captioning: A Comparative Analysis</h3>
+                <p>While manual captioning by a human offers the highest degree of nuance and brand-specific voice, AI provides compelling advantages in speed and scale. Let's compare them:</p>
+                
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left border-collapse mt-6 mb-6">
+                        <thead>
+                            <tr>
+                                <th class="border-b-2 border-slate-600 p-3">Feature</th>
+                                <th class="border-b-2 border-slate-600 p-3">AI Captioning</th>
+                                <th class="border-b-2 border-slate-600 p-3">Manual Captioning</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="border-b border-slate-700 p-3"><strong>Speed</strong></td>
+                                <td class="border-b border-slate-700 p-3">Instantaneous. Can process thousands of images in minutes.</td>
+                                <td class="border-b border-slate-700 p-3">Slow. Can take several minutes per image.</td>
+                            </tr>
+                            <tr>
+                                <td class="border-b border-slate-700 p-3"><strong>Scale</strong></td>
+                                <td class="border-b border-slate-700 p-3">Highly scalable. Ideal for large volumes of images.</td>
+                                <td class="border-b border-slate-700 p-3">Not scalable. Impractical for large websites or archives.</td>
+                            </tr>
+                            <tr>
+                                <td class="border-b border-slate-700 p-3"><strong>Cost</strong></td>
+                                <td class="border-b border-slate-700 p-3">Extremely low cost or free, especially with open-source models.</td>
+                                <td class="border-b border-slate-700 p-3">High cost due to labor and time investment.</td>
+                            </tr>
+                            <tr>
+                                <td class="border-b border-slate-700 p-3"><strong>Consistency</strong></td>
+                                <td class="border-b border-slate-700 p-3">Highly consistent in style and quality.</td>
+                                <td class="border-b border-slate-700 p-3">Can vary depending on the person writing the caption.</td>
+                            </tr>
+                            <tr>
+                                <td class="border-b border-slate-700 p-3"><strong>Nuance & Brand Voice</strong></td>
+                                <td class="border-b border-slate-700 p-3">Good, and improving with prompt context, but may miss subtle nuances.</td>
+                                <td class="border-b border-slate-700 p-3">Excellent. A human can perfectly capture a specific brand voice and subtle context.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p>The best approach is often a hybrid one: use AI to generate a baseline caption or alt text for all images at scale, and then have a human editor review and refine the captions for the most important content, ensuring brand alignment and adding that final creative touch.</p>
+
+                <h3 id="choosing-tone">The Art of Choosing the Right Tone and Language</h3>
+                <p>A major advantage of modern AI captioning tools is the ability to guide the output. Simply describing an image isn't always enough; the description needs to match the intended purpose and audience. This tool allows you to select a tone:</p>
+                <ul>
+                    <li><strong>Accurate (Alt Text):</strong> This tone prioritizes a literal, objective description. It's perfect for accessibility and SEO, focusing on what is in the image without interpretation (e.g., "A black laptop on a wooden desk next to a white coffee mug.").</li>
+                    <li><strong>Fun 🎉:</strong> Ideal for social media, this tone adds a lighthearted and engaging spin (e.g., "Fueling up for a day of coding! 💻☕ #WorkFromHome").</li>
+                    <li><strong>Inspirational 💡:</strong> This tone connects the image to a broader, motivational message (e.g., "Every great idea starts with a single spark... and maybe a lot of coffee.").</li>
+                    <li><strong>Joke 😂:</strong> Injects humor and wit, perfect for meme-style content or informal posts (e.g., "My computer's screen is brighter than my future.").</li>
+                </ul>
+                <p>Furthermore, multi-language support breaks down communication barriers, allowing you to reach a global audience by generating captions in their native language, making your content more inclusive and effective worldwide.</p>
+
+                <h3 id="future-of-captioning">The Future of AI-Powered Visual Storytelling</h3>
+                <p>The field of AI vision is advancing at a breathtaking pace. In the near future, we can expect models that not only describe what's in an image but also understand and articulate the emotional undercurrents, cultural references, and complex narratives within a scene. We may see AI that can generate entire blog posts or social media campaigns based on a single image, create video descriptions in real-time, or even power augmented reality experiences that provide live audio descriptions of the world for the visually impaired.</p>
+                <p>As these technologies evolve, they will become even more integral to how we create and consume digital content. By embracing tools like this AI Image Caption Generator today, you are not just optimizing your current workflow; you are stepping into the future of digital communication.</p>
+
+                <h3 id="faq">Frequently Asked Questions</h3>
+                <div class="space-y-4">
+                    <details class="faq-item bg-slate-800 rounded-lg p-4">
+                        <summary class="font-semibold flex justify-between items-center">
+                            What is an AI image caption generator?
+                            <span class="transform transition-transform duration-300 group-open:rotate-180">+</span>
+                        </summary>
+                        <p class="mt-2 text-slate-300">An AI image caption generator is a tool that uses artificial intelligence, specifically computer vision and natural language processing models, to automatically create descriptive text (captions) for an image. It analyzes the visual content of the image and generates relevant, human-like descriptions.</p>
+                    </details>
+                    <details class="faq-item bg-slate-800 rounded-lg p-4">
+                        <summary class="font-semibold flex justify-between items-center">
+                            Why is alt text important for images?
+                            <span class="transform transition-transform duration-300 group-open:rotate-180">+</span>
+                        </summary>
+                        <p class="mt-2 text-slate-300">Alt text (alternative text) is crucial for two main reasons: accessibility and SEO. For accessibility, it provides a textual description of an image for screen readers used by visually impaired users. For SEO, it helps search engines understand the content of an image, improving its chances of ranking in image search results.</p>
+                    </details>
+                    <details class="faq-item bg-slate-800 rounded-lg p-4">
+                        <summary class="font-semibold flex justify-between items-center">
+                            How does this tool work?
+                            <span class="transform transition-transform duration-300 group-open:rotate-180">+</span>
+                        </summary>
+                        <p class="mt-2 text-slate-300">You upload an image, and the tool converts it into a format that a Vision Language Model (like those from Ollama or other AI services) can understand. The model analyzes the image's objects, actions, and context. Based on your selected tone and language, it then generates several caption options for you to choose from.</p>
+                    </details>
+                    <details class="faq-item bg-slate-800 rounded-lg p-4">
+                        <summary class="font-semibold flex justify-between items-center">
+                            Is my uploaded image stored on your servers?
+                            <span class="transform transition-transform duration-300 group-open:rotate-180">+</span>
+                        </summary>
+                        <p class="mt-2 text-slate-300">No, we prioritize your privacy. The image is processed in your browser, converted to a Base64 string, and sent directly to the simulated AI model endpoint for captioning. We do not store your images on our servers.</p>
+                    </details>
+                    <details class="faq-item bg-slate-800 rounded-lg p-4">
+                        <summary class="font-semibold flex justify-between items-center">
+                            Can I use the generated captions for commercial purposes?
+                            <span class="transform transition-transform duration-300 group-open:rotate-180">+</span>
+                        </summary>
+                        <p class="mt-2 text-slate-300">Yes, the captions generated by this tool are free to use for both personal and commercial purposes, such as on your blog, e-commerce site, or social media marketing campaigns. However, always ensure the final caption accurately reflects your content and brand voice.</p>
+                    </details>
+                </div>
+
+            </article>
+        </section>
+
+        <footer class="w-full text-center mt-12 mb-4 z-10 text-sm text-slate-400">
+            <p class="mb-2">
+                <a href="https://github.com/hsinidev" target="_blank" rel="noopener noreferrer" class="font-bold text-gold hover:text-yellow-300 transition-colors">Powered by HSINI MOHAMED</a>
+            </p>
+            <p>
+                <a href="https://doodax.com" class="hover:text-slate-200 transition-colors">doodax.com</a> | 
+                <a href="mailto:hsini.web@gmail.com" class="hover:text-slate-200 transition-colors">hsini.web@gmail.com</a>
+            </p>
+        </footer>
+    </div>
+    
+    <!-- Modals -->
+    <div id="about-modal" class="modal-overlay fixed inset-0 z-50 hidden items-center justify-center p-4" data-modal-id="about-modal">
+        <div class="bg-slate-800 border border-slate-700 rounded-lg shadow-xl p-6 w-full max-w-lg relative">
+            <button class="modal-close absolute top-3 right-3 text-slate-400 hover:text-white">&times;</button>
+            <h3 class="text-xl font-bold mb-4">About</h3>
+            <p>This AI Image Caption Generator is a free tool designed to help content creators, marketers, and developers quickly generate high-quality captions and alt text for images. It leverages a simulated advanced Vision Model to provide contextually aware and stylistically varied text.</p>
+        </div>
+    </div>
+    <div id="contact-modal" class="modal-overlay fixed inset-0 z-50 hidden items-center justify-center p-4" data-modal-id="contact-modal">
+        <div class="bg-slate-800 border border-slate-700 rounded-lg shadow-xl p-6 w-full max-w-lg relative">
+            <button class="modal-close absolute top-3 right-3 text-slate-400 hover:text-white">&times;</button>
+            <h3 class="text-xl font-bold mb-4">Contact</h3>
+            <p>For inquiries, feedback, or collaboration, please reach out to HSINI MOHAMED at <a href="mailto:hsini.web@gmail.com" class="text-indigo-400 hover:underline">hsini.web@gmail.com</a>.</p>
+        </div>
+    </div>
+    <div id="guide-modal" class="modal-overlay fixed inset-0 z-50 hidden items-center justify-center p-4" data-modal-id="guide-modal">
+        <div class="bg-slate-800 border border-slate-700 rounded-lg shadow-xl p-6 w-full max-w-lg relative">
+            <button class="modal-close absolute top-3 right-3 text-slate-400 hover:text-white">&times;</button>
+            <h3 class="text-xl font-bold mb-4">How to Use</h3>
+            <ol class="list-decimal list-inside space-y-2">
+                <li><strong>Upload an Image:</strong> Click the upload area or drag and drop an image file.</li>
+                <li><strong>Configure Options:</strong> (Optional) Adjust the tone, language, and add context.</li>
+                <li><strong>Generate:</strong> Click the "Generate Captions" button.</li>
+                <li><strong>Copy:</strong> The AI will provide several captions. Click the copy icon next to your favorite one.</li>
+            </ol>
+        </div>
+    </div>
+     <div id="privacy-modal" class="modal-overlay fixed inset-0 z-50 hidden items-center justify-center p-4" data-modal-id="privacy-modal">
+        <div class="bg-slate-800 border border-slate-700 rounded-lg shadow-xl p-6 w-full max-w-lg relative">
+            <button class="modal-close absolute top-3 right-3 text-slate-400 hover:text-white">&times;</button>
+            <h3 class="text-xl font-bold mb-4">Privacy Policy</h3>
+            <p>We respect your privacy. Images you upload are processed locally in your browser and are not stored on our servers. The image data is sent to a simulated API endpoint for processing and is not logged or retained.</p>
+        </div>
+    </div>
+     <div id="tos-modal" class="modal-overlay fixed inset-0 z-50 hidden items-center justify-center p-4" data-modal-id="tos-modal">
+        <div class="bg-slate-800 border border-slate-700 rounded-lg shadow-xl p-6 w-full max-w-lg relative">
+            <button class="modal-close absolute top-3 right-3 text-slate-400 hover:text-white">&times;</button>
+            <h3 class="text-xl font-bold mb-4">Terms of Service</h3>
+            <p>This tool is provided for free and "as is" without any warranty. You are free to use the generated captions for any purpose, commercial or personal. You agree not to use this service to process illegal or harmful images. We reserve the right to modify or discontinue the service at any time.</p>
+        </div>
+    </div>
+     <div id="dmca-modal" class="modal-overlay fixed inset-0 z-50 hidden items-center justify-center p-4" data-modal-id="dmca-modal">
+        <div class="bg-slate-800 border border-slate-700 rounded-lg shadow-xl p-6 w-full max-w-lg relative">
+            <button class="modal-close absolute top-3 right-3 text-slate-400 hover:text-white">&times;</button>
+            <h3 class="text-xl font-bold mb-4">DMCA</h3>
+            <p>We respect intellectual property rights. Since we do not host any user-uploaded content, any DMCA claims should be directed to the platforms where the content is ultimately published. If you have concerns about the operation of this tool, please contact us via the provided email.</p>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const dropZone = document.getElementById('drop-zone');
+            const imageUpload = document.getElementById('image-upload');
+            const imagePreview = document.getElementById('image-preview');
+            const uploadPrompt = document.getElementById('upload-prompt');
+            const generateBtn = document.getElementById('generate-btn');
+            const outputArea = document.getElementById('output-area');
+            const captionsContainer = document.getElementById('captions-container');
+            const errorMessage = document.getElementById('error-message');
+
+            const toneSelect = document.getElementById('tone');
+            const languageSelect = document.getElementById('language');
+            const additionalInfo = document.getElementById('additional-info');
+
+            let file_b64 = null;
+
+            // --- Drag and Drop Logic ---
+            dropZone.addEventListener('dragover', (e) => {
+                e.preventDefault();
+                dropZone.classList.add('border-indigo-500', 'bg-slate-800');
+            });
+
+            dropZone.addEventListener('dragleave', () => {
+                dropZone.classList.remove('border-indigo-500', 'bg-slate-800');
+            });
+
+            dropZone.addEventListener('drop', (e) => {
+                e.preventDefault();
+                dropZone.classList.remove('border-indigo-500', 'bg-slate-800');
+                const files = e.dataTransfer.files;
+                if (files.length > 0) {
+                    imageUpload.files = files;
+                    handleFile(files[0]);
+                }
+            });
+            
+            dropZone.addEventListener('click', () => imageUpload.click());
+            imageUpload.addEventListener('change', (e) => {
+                if (e.target.files.length > 0) {
+                    handleFile(e.target.files[0]);
+                }
+            });
+
+            // --- File Handling and Preview ---
+            function handleFile(file) {
+                if (!file || !file.type.startsWith('image/')) {
+                    showError('Please select a valid image file.');
+                    return;
+                }
+
+                const reader = new FileReader();
+                reader.onload = (e) => {
+                    const result = e.target.result;
+                    imagePreview.src = result;
+                    imagePreview.classList.remove('hidden');
+                    uploadPrompt.classList.add('hidden');
+                    file_b64 = result;
+                    errorMessage.classList.add('hidden'); // Hide error on new upload
+                };
+                reader.readAsDataURL(file);
+            }
+            
+            // --- Error Display ---
+            function showError(message) {
+                 errorMessage.textContent = message;
+                 errorMessage.classList.remove('hidden');
+            }
+
+            // --- API Call Simulation ---
+            async function generateCaptions() {
+                if (!file_b64) {
+                    showError('Please upload an image first.');
+                    return;
+                }
+
+                generateBtn.disabled = true;
+                generateBtn.innerHTML = `
+                    <svg class="animate-spin -ml-1 mr-3 h-5 w-5 text-white inline" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                        <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                        <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                    </svg>
+                    Generating...
+                `;
+                outputArea.classList.add('hidden');
+                captionsContainer.innerHTML = '';
+                errorMessage.classList.add('hidden');
+
+                const selectedTone = toneSelect.value;
+                const selectedLang = languageSelect.value;
+                const context = additionalInfo.value;
+
+                // Simulate API call
+                try {
+                    await new Promise(resolve => setTimeout(resolve, 2000));
+
+                    // Mock API response based on tone
+                    const mockCaptions = {
+                        fun: [
+                            "Living my best life! ✨",
+                            "Just another day in paradise.",
+                            "This is what happiness looks like.",
+                            "Making some memories! 📸"
+                        ],
+                        accurate: [
+                            "A close-up shot of a person smiling.",
+                            "A landscape view of mountains at sunset.",
+                            "An object placed on a wooden surface.",
+                            "A candid photo of people interacting."
+                        ],
+                        serious: [
+                            "A moment of quiet contemplation.",
+                            "The stark reality of the urban landscape.",
+                            "An introspective portrait.",
+                            "The scene captures a profound sense of solitude."
+                        ],
+                        joke: [
+                            "I'm not saying it was aliens, but...",
+                            "I came, I saw, I forgot what I was doing.",
+                            "This is my 'I have no idea what's happening' face.",
+                            "Probably thinking about snacks."
+                        ],
+                        inspirational: [
+                            "Embrace the journey, not just the destination.",
+                            "Every sunset is an opportunity to reset.",
+                            "Find the beauty in the everyday moments.",
+                            "Let your dreams be bigger than your fears."
+                        ]
+                    };
+
+                    const captions = mockCaptions[selectedTone] || mockCaptions['accurate'];
+                    displayCaptions(captions);
+
+                } catch (error) {
+                    showError('Failed to generate captions. Please try again.');
+                } finally {
+                    generateBtn.disabled = false;
+                    generateBtn.textContent = 'Generate Captions';
+                }
+            }
+
+            generateBtn.addEventListener('click', generateCaptions);
+
+            // --- Display Results ---
+            function displayCaptions(captions) {
+                captions.forEach(caption => {
+                    const captionEl = document.createElement('div');
+                    captionEl.className = 'bg-slate-900/70 border border-slate-700 rounded-md p-3 flex items-center justify-between';
+                    captionEl.innerHTML = `
+                        <p class="text-slate-300">${caption}</p>
+                        <button class="copy-btn p-2 rounded-md hover:bg-slate-700 transition-colors" title="Copy caption">
+                           <svg class="w-5 h-5 text-slate-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 17.25v3.375c0 .621-.504 1.125-1.125 1.125h-9.75a1.125 1.125 0 01-1.125-1.125V7.875c0-.621.504-1.125 1.125-1.125H6.75a9.06 9.06 0 011.5.124m7.5 10.376h3.375c.621 0 1.125-.504 1.125-1.125V11.25c0-4.46-3.243-8.161-7.5-8.876a9.06 9.06 0 00-1.5-.124H9.375c-.621 0-1.125.504-1.125 1.125v3.5m7.5 10.375H9.375a1.125 1.125 0 01-1.125-1.125v-9.25m12 6.625v-1.875a3.375 3.375 0 00-3.375-3.375h-1.5a1.125 1.125 0 01-1.125-1.125v-1.5a3.375 3.375 0 00-3.375-3.375H9.75" />
+                            </svg>
+                        </button>
+                    `;
+                    captionsContainer.appendChild(captionEl);
+                });
+                outputArea.classList.remove('hidden');
+                
+                document.querySelectorAll('.copy-btn').forEach(btn => {
+                    btn.addEventListener('click', (e) => {
+                        const textToCopy = e.currentTarget.previousElementSibling.textContent;
+                        navigator.clipboard.writeText(textToCopy).then(() => {
+                           const originalIcon = btn.innerHTML;
+                           btn.innerHTML = `<svg class="w-5 h-5 text-green-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>`;
+                           setTimeout(() => { btn.innerHTML = originalIcon; }, 2000);
+                        });
+                    });
+                });
+            }
+
+            // --- Menu pop-up Logic ---
+            const menuBtn = document.getElementById('menu-btn');
+            const popupMenu = document.getElementById('popup-menu');
+            const menuOpenIcon = document.getElementById('menu-open-icon');
+            const menuCloseIcon = document.getElementById('menu-close-icon');
+
+            function toggleMenu() {
+                const isHidden = popupMenu.classList.contains('hidden');
+                popupMenu.classList.toggle('hidden');
+                menuOpenIcon.classList.toggle('hidden');
+                menuCloseIcon.classList.toggle('hidden');
+                menuBtn.setAttribute('aria-expanded', String(!isHidden));
+            }
+
+            menuBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                toggleMenu();
+            });
+            
+            popupMenu.querySelectorAll('a[data-modal]').forEach(link => {
+                link.addEventListener('click', () => {
+                    if (!popupMenu.classList.contains('hidden')) {
+                        toggleMenu();
+                    }
+                });
+            });
+
+            document.addEventListener('click', (e) => {
+                const isMenuOpen = !popupMenu.classList.contains('hidden');
+                if (isMenuOpen && !menuBtn.contains(e.target) && !popupMenu.contains(e.target)) {
+                    toggleMenu();
+                }
+            });
+
+            // --- Read More Logic ---
+            const readMoreBtn = document.getElementById('read-more-btn');
+            const seoArticle = document.getElementById('seo-article');
+            readMoreBtn.addEventListener('click', () => {
+                seoArticle.classList.toggle('hidden');
+                readMoreBtn.textContent = seoArticle.classList.contains('hidden') ? 'Learn More About AI Image Captioning ↓' : 'Hide Article ↑';
+            });
+            
+            // --- Modal Logic ---
+            const modalTriggers = document.querySelectorAll('[data-modal]');
+            const modals = document.querySelectorAll('.modal-overlay');
+            const modalCloseButtons = document.querySelectorAll('.modal-close');
+
+            modalTriggers.forEach(trigger => {
+                trigger.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const modalId = trigger.getAttribute('data-modal');
+                    const modal = document.getElementById(modalId);
+                    if (modal) {
+                         modal.classList.remove('hidden');
+                         modal.classList.add('flex');
+                    }
+                });
+            });
+
+            const closeModal = (modal) => {
+                modal.classList.add('hidden');
+                modal.classList.remove('flex');
+            };
+
+            modalCloseButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    closeModal(button.closest('.modal-overlay'));
+                });
+            });
+
+            modals.forEach(modal => {
+                modal.addEventListener('click', (e) => {
+                    if (e.target === modal) {
+                        closeModal(modal);
+                    }
+                });
+            });
+            
+             // Close modals with Escape key
+            document.addEventListener('keydown', (e) => {
+                if (e.key === "Escape") {
+                    modals.forEach(closeModal);
+                }
+            });
+        });
+    </script>
+</body>
+</html>

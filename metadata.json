@@ -1,0 +1,5 @@
+{
+  "name": "AI Image Caption Generator",
+  "description": "A self-contained web application that uses a simulated Vision Model API to generate descriptive and creative captions for uploaded images, featuring advanced controls and a comprehensive SEO article.",
+  "requestFramePermissions": []
+}
